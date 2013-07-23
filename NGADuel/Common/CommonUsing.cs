@@ -11,13 +11,13 @@ namespace NGADuel
         public static string GetDuelType(int? type)
         {
             XDocument xml = XDocument.Load(System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "Config/Configs.xml");
-            return xml.Element("DuelType").Elements().Single(x => x.Attribute("value").Value == type.ToString()).Value;
+            return xml.Element("root").Element("DuelType").Elements().Single(x => x.Attribute("value").Value == type.ToString()).Value;
         }
 
         public static string GetServerName(int? server)
         {
             XDocument xml = XDocument.Load(System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "Config/Configs.xml");
-            return xml.Element("DuelServer").Elements().Single(x => x.Attribute("value").Value == server.ToString()).Value;
+            return xml.Element("root").Element("DuelServer").Elements().Single(x => x.Attribute("value").Value == server.ToString()).Value;
         }
     }
 }

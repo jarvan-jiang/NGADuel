@@ -15,7 +15,7 @@ namespace NGADuel.Controllers
         {
             using (var db = new dbduelEntities())
             {
-                return View(db.duelinfo);
+                return View(db.duelinfo.ToList());
             }
         }
 

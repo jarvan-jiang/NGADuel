@@ -1,104 +1,87 @@
-﻿body
-{
+﻿body {
     font-family: "Trebuchet MS", "Helvetica", "Arial", "Verdana", "sans-serif";
     font-size: 62.5%;
     color: #232323;
     background-color: #fff;
 }
 
-html, form
-{
+html, form {
     height: 100%;
 }
 
-body
-{
+body {
     height: 98%;
 }
 
-header, footer, nav, section
-{
+header, footer, nav, section {
     display: block;
 }
 
 
 /* Styles for basic forms
 -----------------------------------------------------------*/
-fieldset
-{
+fieldset {
     border: 1px solid #ddd;
     padding: 1.4em 1.4em 1.4em 1.4em;
     margin: 0 0 1.5em 0;
 }
 
-legend
-{
+legend {
     font-size: 1.2em;
     font-weight: bold;
 }
 
-textarea
-{
+textarea {
     min-height: 75px;
 }
 
-.editor-label
-{
+.editor-label {
     margin: 1em 0 0 0;
 }
 
-.editor-field
-{
+.editor-field {
     margin: 0.5em 0 0 0;
 }
 
 
 /* Styles for validation helpers
 -----------------------------------------------------------*/
-.field-validation-error
-{
+.field-validation-error {
     color: #f00;
 }
 
-.field-validation-valid
-{
+.field-validation-valid {
     display: none;
 }
 
-.input-validation-error
-{
+.input-validation-error {
     border: 1px solid #f00;
     background-color: #fee;
 }
 
-.validation-summary-errors
-{
+.validation-summary-errors {
     font-weight: bold;
     color: #f00;
 }
 
-.validation-summary-valid
-{
+.validation-summary-valid {
     display: none;
 }
 
 /*my style*/
-.head
-{
+.head {
     font-size: xx-large;
     font-weight: bold;
     vertical-align: middle;
     padding: 5px 0 0 8px;
 }
 
-    .head img
-    {
+    .head img {
         vertical-align: middle;
         margin-right: 50px;
     }
 
-.body
-{
+.body {
     width: 97%;
     height: 75%;
     margin: auto;
@@ -108,3 +91,15 @@ textarea
     border-radius: 3px;
     box-shadow: -3px 0 5px -3px rgba(1, 1, 1, 0.87), 3px 0 5px -3px rgba(1, 1, 1, 0.87);
 }
+
+table {
+    margin: 1em 0;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    table td, table th {
+        border: 1px solid #eee;
+        padding: .6em 10px;
+        text-align: left;
+    }
