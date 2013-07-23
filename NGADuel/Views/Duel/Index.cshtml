@@ -1,0 +1,38 @@
+﻿@model IEnumerable<NGADuel.duelinfo>
+@{
+    ViewBag.Title = "约战列表";
+    Layout = null;
+}
+
+<div id="users-contain" class="ui-widget">
+    <h1>约战列表</h1>
+    <table class="ui-widget ui-widget-content">
+        <thead>
+            <tr class="ui-widget-header ">
+                <th>约战类型</th>
+                <th>约战服务器</th>
+                <th>约战人</th>
+                <th>挑战目标</th>
+                <th>约战英雄</th>
+                <th>挑战英雄</th>
+                <th>战斗结果</th>
+                <th>信息截图</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var duel in Model)
+            {
+                <tr>
+                    <td>@NGADuel.CommonUsing.GetDuelType(duel.DuelType)</td>
+                    <td>@NGADuel.CommonUsing.GetServerName(duel.DuelServer)</td>
+                    <td>@duel.DuelUser</td>
+                    <td>@duel.DuelToUser</td>
+                    <td>@duel.DuelHero</td>
+                    <td>@duel.DuelToHero</td>
+                    <td>@duel.DuelResult</td>
+                    <td>@duel.DuelImage</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

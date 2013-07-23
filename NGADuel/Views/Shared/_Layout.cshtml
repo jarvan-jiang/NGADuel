@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/bundles/allcss")
+    @Scripts.Render("~/bundles/alljs")
+</head>
+<body>
+    <div class="head">
+        <img src="/images/sala.jpg" />NGA Duel System
+    </div>
+
+    <div class="oper" index="@ViewBag.Index">
+        <ul>
+            <li>首页</li>
+            <li>英雄排行榜</li>
+            <li>玩家排行榜</li>
+            @if (Session["User"] != null)
+            {
+                
+                
+                <li>我的信息</li>
+            
+            }
+            else
+            {
+                <li>
+                    <a title="登录以使用更多功能" href="/login/index">用NGA账号登录</a>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="body">
+        @RenderBody()
+    </div>
+</body>
+</html>

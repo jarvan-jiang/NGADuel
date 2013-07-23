@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="dbduelModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="dbduelModelStoreContainer">
+          <EntitySet Name="duelinfo" EntityType="dbduelModel.Store.duelinfo" store:Type="Tables" Schema="dbduel" />
+          <EntitySet Name="recordinfo" EntityType="dbduelModel.Store.recordinfo" store:Type="Tables" Schema="dbduel" />
+          <EntitySet Name="solorecord" EntityType="dbduelModel.Store.solorecord" store:Type="Tables" Schema="dbduel" />
+        </EntityContainer>
+        <EntityType Name="duelinfo">
+          <Key>
+            <PropertyRef Name="DuelID" />
+          </Key>
+          <Property Name="DuelID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DuelType" Type="int" />
+          <Property Name="DuelServer" Type="int" />
+          <Property Name="DuelUser" Type="varchar" MaxLength="255" />
+          <Property Name="DuelToUser" Type="varchar" MaxLength="255" />
+          <Property Name="DuelHero" Type="int" />
+          <Property Name="DuelToHero" Type="int" />
+          <Property Name="DuelResult" Type="int" />
+          <Property Name="DuelImage" Type="varchar" />
+        </EntityType>
+        <EntityType Name="recordinfo">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RecordTypeID" Type="int" />
+          <Property Name="RecordUser" Type="varchar" MaxLength="255" />
+          <Property Name="RecordHero" Type="varchar" MaxLength="255" />
+          <Property Name="RecordServer" Type="int" />
+          <Property Name="RecordData" Type="varchar" />
+          <Property Name="RecordImage" Type="varchar" />
+        </EntityType>
+        <EntityType Name="solorecord">
+          <Key>
+            <PropertyRef Name="RecordTypeID" />
+          </Key>
+          <Property Name="RecordTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RecordDesc" Type="varchar" />
+          <Property Name="BestRecordID" Type="int" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbduelModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="dbduelEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="duelinfo" EntityType="dbduelModel.duelinfo" />
+          <EntitySet Name="recordinfo" EntityType="dbduelModel.recordinfo" />
+          <EntitySet Name="solorecord" EntityType="dbduelModel.solorecord" />
+        </EntityContainer>
+        <EntityType Name="duelinfo">
+          <Key>
+            <PropertyRef Name="DuelID" />
+          </Key>
+          <Property Type="Int32" Name="DuelID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="DuelType" />
+          <Property Type="Int32" Name="DuelServer" />
+          <Property Type="String" Name="DuelUser" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DuelToUser" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="DuelHero" />
+          <Property Type="Int32" Name="DuelToHero" />
+          <Property Type="Int32" Name="DuelResult" />
+          <Property Type="String" Name="DuelImage" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="recordinfo">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Type="Int32" Name="RecordID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="RecordTypeID" />
+          <Property Type="String" Name="RecordUser" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RecordHero" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="RecordServer" />
+          <Property Type="String" Name="RecordData" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RecordImage" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="solorecord">
+          <Key>
+            <PropertyRef Name="RecordTypeID" />
+          </Key>
+          <Property Type="Int32" Name="RecordTypeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="RecordDesc" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="BestRecordID" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbduelModelStoreContainer" CdmEntityContainer="dbduelEntities">
+          <EntitySetMapping Name="duelinfo">
+            <EntityTypeMapping TypeName="dbduelModel.duelinfo">
+              <MappingFragment StoreEntitySet="duelinfo">
+                <ScalarProperty Name="DuelImage" ColumnName="DuelImage" />
+                <ScalarProperty Name="DuelResult" ColumnName="DuelResult" />
+                <ScalarProperty Name="DuelToHero" ColumnName="DuelToHero" />
+                <ScalarProperty Name="DuelHero" ColumnName="DuelHero" />
+                <ScalarProperty Name="DuelToUser" ColumnName="DuelToUser" />
+                <ScalarProperty Name="DuelUser" ColumnName="DuelUser" />
+                <ScalarProperty Name="DuelServer" ColumnName="DuelServer" />
+                <ScalarProperty Name="DuelType" ColumnName="DuelType" />
+                <ScalarProperty Name="DuelID" ColumnName="DuelID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="recordinfo">
+            <EntityTypeMapping TypeName="dbduelModel.recordinfo">
+              <MappingFragment StoreEntitySet="recordinfo">
+                <ScalarProperty Name="RecordImage" ColumnName="RecordImage" />
+                <ScalarProperty Name="RecordData" ColumnName="RecordData" />
+                <ScalarProperty Name="RecordServer" ColumnName="RecordServer" />
+                <ScalarProperty Name="RecordHero" ColumnName="RecordHero" />
+                <ScalarProperty Name="RecordUser" ColumnName="RecordUser" />
+                <ScalarProperty Name="RecordTypeID" ColumnName="RecordTypeID" />
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="solorecord">
+            <EntityTypeMapping TypeName="dbduelModel.solorecord">
+              <MappingFragment StoreEntitySet="solorecord">
+                <ScalarProperty Name="BestRecordID" ColumnName="BestRecordID" />
+                <ScalarProperty Name="RecordDesc" ColumnName="RecordDesc" />
+                <ScalarProperty Name="RecordTypeID" ColumnName="RecordTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

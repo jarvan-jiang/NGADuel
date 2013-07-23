@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <DuelType>
+    <item value="0">上单solo</item>
+    <item value="1">中单solo</item>
+    <item value="2">神装单挑</item>
+  </DuelType>
+  <DuelServer>
+    <item value="0">电信 艾欧尼亚</item>
+    <item value="1">电信 祖安</item>
+    <item value="2">网通 比尔吉沃特</item>
+    <item value="3">网通 德玛西亚</item>
+    <item value="4">电信 扭曲丛林</item>
+  </DuelServer>
+  <SoloRecord>
+    <item value="0">最早solo大龙</item>
+    <item value="1">最早solo小龙</item>
+    <item value="2">最快推掉中等难度电脑</item>
+    <item value="3">最快拿1血</item>
+    <item value="4">最快赢得匹配胜利</item>
+  </SoloRecord>
+</root>

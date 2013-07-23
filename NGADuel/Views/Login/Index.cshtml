@@ -1,0 +1,25 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html >
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>登录</title>
+    @Styles.Render("~/bundles/allcss")
+    @Scripts.Render("~/bundles/alljs")
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <fieldset style="width: 600px; margin: auto">
+            <legend>NGA约战系统</legend>
+            <label for="userid"> 输入你在NGA的用户名：</label><input title="登录后可以使用约战、刷榜等功能" id="userid" name="userid" value="" /><input value="确定" type="submit" />
+            <h2>或者</h2>
+            <a href="/home/index" title="能够查看约战结果和单人榜单等">匿名进入</a>
+        </fieldset>
+    }
+</body>
+</html>
